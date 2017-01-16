@@ -1,0 +1,52 @@
+menu "WiFi access point configuration"
+
+config WIFI_AP1
+    bool "Set access point 1"
+config WIFI_AP1_SSID
+    string "SSID of access point 1" if WIFI_AP1
+config WIFI_AP1_PASSWORD
+    string "Password of access point 1" if WIFI_AP1
+
+config WIFI_AP2
+    bool "Set access point 2" if WIFI_AP1
+config WIFI_AP2_SSID
+    string "SSID of access point 1" if WIFI_AP2
+config WIFI_AP2_PASSWORD
+    string "Password of access point 1" if WIFI_AP2
+
+
+config WIFI_AP3
+    bool "Set access point 3" if WIFI_AP2
+config WIFI_AP3_SSID
+    string "SSID of access point 1" if WIFI_AP3
+config WIFI_AP3_PASSWORD
+    string "Password of access point 1" if WIFI_AP3
+
+
+config WIFI_AP4
+    bool "Set access point 4" if WIFI_AP3
+config WIFI_AP4_SSID
+    string "SSID of access point 1" if WIFI_AP4
+config WIFI_AP4_PASSWORD
+    string "Password of access point 1" if WIFI_AP4
+
+
+config WIFI_AP5
+    bool "Set access point 5" if WIFI_AP4
+config WIFI_AP5_SSID
+    string "SSID of access point 1" if WIFI_AP5
+config WIFI_AP5_PASSWORD
+    string "Password of access point 1" if WIFI_AP5
+
+config WIFI_AP_COUNT
+    int "Number of access points configured"
+    range 0 5
+    default 5 if WIFI_AP5
+    default 4 if WIFI_AP4
+    default 3 if WIFI_AP3
+    default 2 if WIFI_AP2
+    default 1 if WIFI_AP1
+    default 0
+
+endmenu
+
