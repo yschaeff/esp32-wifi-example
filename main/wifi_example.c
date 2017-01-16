@@ -17,4 +17,5 @@ void app_main()
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Could not bring up network");
     }
+    ESP_LOGE(__func__, "Done.");
 }
